@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 0%;
+    /* For centering everything */
+    /* Hide Scrollbars */
+    overflow: hidden;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box p {
+    font-size: 24px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 90vw;
+
+}
+
+.panel {
+    color: #fff;
+    margin: 10px;
+    border-radius: 30px;
+    height: 80vh;
+    background-size: auto 100 cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    /* So on hover we see a pointer */
+    cursor: pointer;
+
+    /* even size without active */
+    flex: 0.5;
+
+    /* want inside h3s position absolute */
+    position: relative;
+
+    /* Animation for when we change to bigger side */
+    transition: flex 0.7s ease-in;
+}
+
+#panel1 {
+    background-image: url(https://images.unsplash.com/photo-1632418128534-06a848984ab5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=735&q=80);
+}
+
+#panel2 {
+    background-image: url(https://images.unsplash.com/photo-1632309812723-2f350b53c50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80);
+}
+
+#panel3 {
+    background-image: url(https://images.unsplash.com/photo-1631830879682-0e09fcc2ec4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=761&q=80);
+}
+
+#panel4 {
+    background-image: url(https://images.unsplash.com/photo-1629067637999-d95d9182ab02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80);
+}
+
+#panel5 {
+    background-image: url(https://images.unsplash.com/photo-1632089594835-aa8a2a9471cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=710&q=80);
+}
+
+
+.panel h2 {
+    /* Make invisible when not active */
+    opacity: 0;
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.panel.active {
+    /* Make panel bigger when active */
+    flex: 1;
+}
+
+.panel.active h2 {
+    /* when active show them text (h2)*/
+    opacity: 1;
+    /* transition: {css property}, {length} {type} {delay} */
+    transition: opacity 0.3s ease-in 0.4s
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
